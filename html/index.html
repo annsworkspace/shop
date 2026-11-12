@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../pictures/home.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../toast.css">
+    <link rel="stylesheet" href="../footer.css">
+    <script src="../language.js" defer></script>
+    <script src="script.js" defer></script>
+    <title data-i18n="home.title">Belle &amp; Co. | Shop</title>
+</head>
+<body>
+
+    <!-- Branded header: the earlier header contained only the three action icons. -->
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Belle and Co. home">Belle <span>&amp; Co.</span></a>
+      <p class="header-note" data-i18n="home.tagline">Thoughtful finds for every day</p>
+      <div class="header-actions" aria-label="Account and shopping">
+        <a class="header-icon-button" href="../account/account-index.html" aria-label="Profile" title="Profile" data-i18n-aria-label="home.profile" data-i18n-title="home.profile">♙</a>
+        <a class="header-icon-button" href="../cart/cart-index.html" aria-label="Shopping cart" title="Shopping cart" data-i18n-aria-label="home.cart" data-i18n-title="home.cart">🛒</a>
+        <a class="header-icon-button" href="../wishlist/wishlist-index.html" aria-label="Wishlist" title="Wishlist" data-i18n-aria-label="home.wishlist" data-i18n-title="home.wishlist">♡</a>
+      </div>
+    </header>
+
+    <!-- data-filter values below match the category strings returned by Fake Store API. -->
+    <nav class="category-nav" aria-label="Shop by category" data-i18n-aria-label="home.categories">
+        <button type="button" data-filter="all" class="active" aria-pressed="true" data-i18n="home.all">All products</button>
+        <button type="button" data-filter="women's clothing" aria-pressed="false" data-i18n="home.women">Women</button>
+        <button type="button" data-filter="men's clothing" aria-pressed="false" data-i18n="home.men">Men</button>
+        <button type="button" data-filter="electronics" aria-pressed="false" data-i18n="home.electronics">Electronics</button>
+        <button type="button" data-filter="jewelery" aria-pressed="false" data-i18n="home.jewelry">Jewelry</button>
+    </nav>
+
+    <main>
+        <!-- Introductory banner; its artwork is made from CSS shapes and text. -->
+        <section class="hero" aria-labelledby="hero-title"> 
+          <!--arialabelledby is an attribute to give a descriptive name-->
+          <p class="hero-kicker" data-i18n="home.kicker">THE BELLE EDIT</p>
+          <h1 id="hero-title" data-i18n="home.heroTitle">A little lovely goes a long way.</h1>
+          <p data-i18n="home.heroDescription">Everyday essentials and thoughtful finds, picked just for you.</p>
+          <!-- heroDescription will target main body -->
+          <a href="#products" class="hero-link"><span data-i18n="home.explore">Explore the collection</span> <span aria-hidden="true">↓</span></a>
+          <span class="hero-mark" aria-hidden="true">B<span>&amp;</span></span>
+          <!-- used to apply a specific behavior -->
+        </section>
+        <!-- Product status and cards are filled in by html/script.js. -->
+        <section class="catalog" aria-labelledby="catalog-title">
+          <div class="catalog-heading">
+            <div>
+              <p class="section-kicker" data-i18n="home.curated">CURATED FOR YOU</p>
+              <h2 id="catalog-title" data-i18n="home.collection">Shop the collection</h2>
+            </div>
+            <p id="product-message" role="status" aria-live="polite" data-i18n="home.loading">Loading products…</p>
+          </div>
+        <section id="products" class="products" aria-label="Products" data-i18n-aria-label="home.products"></section>
+        </section>
+    </main>
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div><a class="footer-brand" href="index.html">Belle &amp; Co.</a><p class="footer-copy" data-i18n="footer.tagline">Thoughtful finds for every day.</p></div>
+        <p class="footer-rights">© <span data-current-year></span> Belle &amp; Co. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../toast.css">
+    <link rel="icon" href="/pictures/cart.jpg">
+    <script src="../language.js" defer></script>
+    <script src="../list-page.js" defer></script>
+    <title data-i18n="cart.title">Shopping cart | Belle &amp; Co.</title>
+</head>
+<body>
+    <main class="list-page" data-list-page="cart">
+        <h1 data-i18n="cart.heading">Shopping cart</h1>
+        <p id="list-empty" data-i18n="cart.empty">Your cart is empty.</p>
+        <section id="list-content" hidden>
+            <p id="list-count" class="list-count"></p>
+            <div id="list-items" class="cart-grid"></div>
+            <p id="list-subtotal" class="list-subtotal" hidden></p>
+        </section>
+        <a href="../html/index.html" data-i18n="common.continueShopping">Continue shopping</a>
+    </main>
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div><a class="footer-brand" href="../html/index.html">Belle &amp; Co.</a><p class="footer-copy" data-i18n="footer.tagline">Thoughtful finds for every day.</p></div>
+            <p class="footer-rights">© <span data-current-year></span> Belle &amp; Co. <span data-i18n="footer.rights">All rights reserved.</span></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+:root {
+  color-scheme: light;
+  --page: #f8f5f1;
+  --surface: rgba(255, 255, 255, .94);
+  --text: #30261f;
+  --muted: #74695f;
+  --border: #b8aaa0;
+  --accent: #704a37;
+  --accent-hover: #573725;
+}
+
+* { box-sizing: border-box; }
+
+body.dark-mode {
+  color-scheme: dark;
+  --page: #1c1917;
+  --surface: rgba(41, 35, 31, .96);
+  --text: #f5eee8;
+  --muted: #c1b3a7;
+  --border: #66574c;
+  --accent: #c58b66;
+  --accent-hover: #d9a17d;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+}
+
+.login-page {
+  min-height: calc(100vh - 110px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem clamp(1.5rem, 8vw, 8rem);
+  background: center / cover no-repeat url("/pictures/loginpage.jpg");
+}
+
+body.dark-mode .login-page {
+  background-image: linear-gradient(rgba(20, 17, 15, .5), rgba(20, 17, 15, .5)), url("/pictures/loginpage.jpg");
+}
+
+.login-panel {
+  width: min(100%, 22rem);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: var(--surface);
+  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 600px) {
+  .login-page {
+    justify-content: center;
+    padding: 1rem;
+  }
+}
+
+.login-panel h1 { margin-top: 0; }
+.login-panel form > p { margin-bottom: 1.25rem; }
+.login-panel label { display: block; margin: 0.9rem 0 0.35rem; }
+.login-panel input { width: 100%; padding: 0.7rem; border: 1px solid var(--border); border-radius: 0.4rem; background: var(--page); color: var(--text); font: inherit; }
+.login-panel form > button { width: 100%; margin-top: 1rem; padding: 0.75rem; border: 0; border-radius: 0.4rem; background: var(--accent); color: white; font: inherit; cursor: pointer; }
+.login-panel form > button:hover { background: var(--accent-hover); }
+.login-panel .switch-copy { text-align: center; font-size: 0.9rem; }
+.text-button { padding: 0; border: 0; background: none; color: var(--accent); font: inherit; text-decoration: underline; cursor: pointer; }
+#form-message { min-height: 1.25rem; font-size: 0.9rem; }

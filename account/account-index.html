@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="account.css">
+  <link rel="stylesheet" href="../footer.css">
+  <link rel="icon" href="/pictures/account.jpg">
+  <script src="../language.js" defer></script>
+  <script src="../auth.js" defer></script>
+  <script src="account.js" defer></script>
+  <title data-i18n="account.title">My account | Belle &amp; Co.</title>
+</head>
+<body>
+  <header class="account-header">
+    <a href="../html/index.html" class="brand">Belle &amp; Co.</a>
+    <a href="../html/index.html" data-i18n="account.back">Back to shop</a>
+  </header>
+  <main class="account-main">
+    <!-- Profile data and sign-out state are populated by account.js from auth.js. -->
+    <section class="profile-card" aria-labelledby="account-title">
+      <p class="eyebrow" data-i18n="account.label">Your account</p>
+      <h1 id="account-title" data-i18n="account.welcome">Welcome</h1>
+      <p id="account-email" class="muted"></p>
+      <button id="sign-out" class="primary-button" type="button" data-i18n="account.signOut">Sign out</button>
+      <p id="account-message" class="muted" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="address-card" aria-labelledby="address-title">
+      <h2 id="address-title" data-i18n="account.addressTitle">Delivery address</h2>
+      <form id="address-form">
+        <div class="address-field">
+          <label for="postal-code" data-i18n="account.postalCode">ZIP / postal code</label>
+          <input id="postal-code" name="postalCode" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="00000-000" required>
+        </div>
+        <p id="address-lookup-status" class="muted address-status" role="status" aria-live="polite"></p>
+        <div class="address-field address-field-wide">
+          <label for="street" data-i18n="account.street">Street address</label>
+          <input id="street" name="street" type="text" autocomplete="address-line1" required>
+        </div>
+        <div class="address-field">
+          <label for="address-number" data-i18n="account.number">Number</label>
+          <input id="address-number" name="number" type="text" autocomplete="off" required>
+        </div>
+        <div class="address-field">
+          <label for="complement" data-i18n="account.complement">Complement (optional)</label>
+          <input id="complement" name="complement" type="text" autocomplete="address-line2">
+        </div>
+        <div class="address-field">
+          <label for="neighborhood" data-i18n="account.neighborhood">Neighborhood</label>
+          <input id="neighborhood" name="neighborhood" type="text" required>
+        </div>
+        <div class="address-field">
+          <label for="city" data-i18n="account.city">City</label>
+          <input id="city" name="city" type="text" autocomplete="address-level2" required>
+        </div>
+        <div class="address-field">
+          <label for="state" data-i18n="account.state">State</label>
+          <input id="state" name="state" type="text" autocomplete="address-level1" maxlength="2" required>
+        </div>
+        <button class="primary-button address-save" type="submit" data-i18n="account.saveAddress">Save address</button>
+        <p id="address-save-status" class="muted address-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- Preferences are saved in localStorage and shared with the storefront. -->
+    <section class="settings-card" aria-labelledby="settings-title">
+      <h2 id="settings-title" data-i18n="account.preferences">Preferences</h2>
+      <div class="setting-row">
+        <span data-i18n="account.theme">Theme</span>
+        <div id="theme-toggle" class="toggle-group" role="group" aria-label="Choose color theme" data-i18n-aria-label="account.chooseTheme">
+          <button type="button" data-theme="light" aria-pressed="true">☀ <span data-i18n="account.light">Light</span></button>
+          <button type="button" data-theme="dark" aria-pressed="false">☾ <span data-i18n="account.dark">Dark</span></button>
+        </div>
+      </div>
+      <div class="setting-row">
+        <span data-i18n="account.language">Language</span>
+        <div class="toggle-group" role="group" aria-label="Choose language" data-i18n-aria-label="account.chooseLanguage">
+          <button type="button" data-language="en" aria-pressed="true">EN</button>
+          <button type="button" data-language="pt" aria-pressed="false">PT</button>
+        </div>
+      </div>
+    </section>
+    <p class="local-note" data-i18n="account.localNote">This demo account is saved in this browser.</p>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div><a class="footer-brand" href="../html/index.html">Belle &amp; Co.</a><p class="footer-copy" data-i18n="footer.tagline">Thoughtful finds for every day.</p></div>
+      <p class="footer-rights">© <span data-current-year></span> Belle &amp; Co. <span data-i18n="footer.rights">All rights reserved.</span></p>
+    </div>
+  </footer>
+</body>
+</html>
